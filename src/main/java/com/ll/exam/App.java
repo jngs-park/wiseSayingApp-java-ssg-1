@@ -7,9 +7,12 @@ public class App {
         System.out.println("== 명언 SSG ==");
 
         Scanner sc = new Scanner(System.in);
+        // 가장 마지막 명언글의 번호
+        int wiseSayingLastId = 0;
 
         outer:
         while(true) {
+
             System.out.printf("명령) ");
             String cmd = sc.nextLine().trim();
 
@@ -19,7 +22,8 @@ public class App {
                     String content = sc.nextLine().trim();
                     System.out.printf("작가 :");
                     String autor = sc.nextLine().trim();
-                    System.out.printf("1번 명언이 등록되었습니다. \n");
+                    int id = ++wiseSayingLastId;
+                    System.out.printf("%d번 명언이 등록되었습니다. \n", id);
                     break;
                 case "종료":
                     break outer;
