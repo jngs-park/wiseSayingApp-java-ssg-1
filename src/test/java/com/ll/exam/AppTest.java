@@ -40,7 +40,7 @@ public class AppTest {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         System.setOut(new PrintStream(output));
         System.out.println("안녕");
-        String rs = output.toString().trim();
+        String rs = output.toString().trim(); // 그 동안 System.out.println 으로 모아놨던 문장들을 받아옴
         // 표준출력을 원상복구
         System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
         output.close();
