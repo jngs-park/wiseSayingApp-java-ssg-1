@@ -29,16 +29,19 @@ public class App {
             switch (rq.getPath()) {
 
                 case "등록":
+
                     wiseSayingController.write(rq);
 
                     break;
 
                 case "삭제":
+
                     wiseSayingController.remove(rq);
 
                     break;
 
                 case "수정":
+
                     wiseSayingController.modify(rq);
 
                     break;
@@ -46,10 +49,11 @@ public class App {
                 case "목록":
 
                     wiseSayingController.list(rq);
+
                     break;
 
-
                 case "종료":
+
                     break outer;
             }
         }
