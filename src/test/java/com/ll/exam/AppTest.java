@@ -13,9 +13,9 @@ public class AppTest {
     @Test
     void 파일에_내용쓰기() {
         Utill.mkdir("test_data");
-        Utill.saveToFile("test_data/1.json", "내용");
+        Utill.saveToFile("test_data/1.json", "내용\n내용");
         String rs = Utill.readFromFile("test_data/1.json");
-        assertEquals("내용", rs);
+        assertEquals("내용\n내용", rs);
     }
 
 
