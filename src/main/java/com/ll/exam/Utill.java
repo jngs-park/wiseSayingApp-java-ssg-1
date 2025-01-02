@@ -7,16 +7,13 @@ import java.nio.channels.FileChannel;
 
 public class Utill {
     public static void saveToFile(String path, String body) {
-        try {
-            RandomAccessFile stream = new RandomAccessFile(path, "rw");
-            FileChannel channel = stream.getChannel();
+        try (RandomAccessFile stream = new RandomAccessFile(path, "rw");
+             FileChannel channel = stream.getChannel()) {
             byte[] strBytes = body.getBytes();
             ByteBuffer buffer = ByteBuffer.allocate(strBytes.length);
             buffer.put(strBytes);
             buffer.flip();
             channel.write(buffer);
-            stream.close();
-            channel.close();
         } catch (IOException e) {
         }
     }
@@ -25,14 +22,13 @@ public class Utill {
         dir.mkdirs();
     }
     public static String getFromFile(String path) {
-        try {
-            RandomAccessFile reader = new RandomAccessFile(path, "r");
+        try (RandomAccessFile reader = new RandomAccessFile(path, "r")) {
             String body = reader.readLine();
-            reader.close();
             return body;
-        }
-        catch ( IOException e ) {
+        } catch (IOException e) {
+
         }
         return "";
     }
-}
+
+    }
