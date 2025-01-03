@@ -3,12 +3,12 @@ package com.ll.exam;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WiseSayingRepository {
+public class WiseSayingService {
 
     private List<WiseSaying> wiseSayings;
     private int wiseSayingLastId;
 
-    WiseSayingRepository() {
+    WiseSayingService() {
         wiseSayings = new ArrayList<>();
         wiseSayingLastId = 0;
     }
