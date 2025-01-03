@@ -72,6 +72,21 @@ public class Util {
         } catch (IOException e) {
         }
     }
+
+    public static void saveNumberToFile(String path, int number) {
+        saveToFile(path, number + "");
+    }
+    public static int readNumberFromFile(String path, int defaultValue) {
+        String rs = readFromFile(path);
+        if ( rs == null ) {
+            return defaultValue;
+        }
+        if ( rs.isEmpty() ) {
+            return defaultValue;
+        }
+        return Integer.parseInt(rs);
+    }
+
     }
 class Pair {
     // Return a map entry (key-value pair) from the specified values
