@@ -1,5 +1,8 @@
 package com.ll.exam;
 
+import java.util.Map;
+
+
 public class WiseSaying {
 
     int id;
@@ -13,6 +16,13 @@ public class WiseSaying {
         this. author = author;
 
     }
+
+    public WiseSaying(Map<String, Object> map) {
+        this.id = (int) map.get("id");
+        this.content = (String) map.get("content");
+        this.author = (String) map.get("author");
+    }
+
 
     @Override
     public String toString() {
