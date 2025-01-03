@@ -36,6 +36,24 @@ public class WiseSaying {
                 .formatted(id, content, author)
                 .trim();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o instanceof WiseSaying == false) return false;
+        WiseSaying other = (WiseSaying) o;
+        if (this.id != other.id) return false;
+        if (this.content.equals(other.content) == false) return false;
+        if (this.author.equals(other.author) == false) return false;
+        return true;
+    }
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (content != null ? content.hashCode() : 0);
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        return result;
+    }
 }
 
 
